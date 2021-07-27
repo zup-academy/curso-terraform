@@ -15,6 +15,12 @@ crash.log
 #
 *.tfvars
 
+terraform.tfplan
+terraform.tfstate
+bin/
+modules-dev/
+modules-qa/
+
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
@@ -32,3 +38,12 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Test exclusions
+!command/test-fixtures/**/*.tfstate
+!command/test-fixtures/**/.terraform/
+
+node_modules/
+*.zip
+tfplan.out
+plan.tfout
