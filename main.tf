@@ -9,3 +9,7 @@ terraform {
 
 provider "docker" {
 }
+
+resource "docker_image" "docusaurus-zup" {
+  name = "public.ecr.aws/zup-academy/docusaurus-zup:latest"
+}
