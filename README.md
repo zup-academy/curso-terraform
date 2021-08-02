@@ -18,3 +18,13 @@
 [Outputs](https://www.terraform.io/docs/language/values/outputs.html)
 
 [Join Functions](https://www.terraform.io/docs/language/functions/join.html)
+
+## v1.4
+
+[Random String](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+[Count](https://www.terraform.io/docs/language/meta-arguments/count.html)
+
+[Splat](https://www.terraform.io/docs/configuration/expressions.html#splat-expressions)
+
+[For](https://www.terraform.io/docs/configuration/expressions.html#for-expressions)
