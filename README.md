@@ -28,3 +28,5 @@
 [Splat](https://www.terraform.io/docs/configuration/expressions.html#splat-expressions)
 
 [For](https://www.terraform.io/docs/configuration/expressions.html#for-expressions)
+
+[Flatten](https://www.terraform.io/docs/language/functions/flatten.html)
