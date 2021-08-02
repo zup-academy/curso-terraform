@@ -29,4 +29,8 @@
 
 [For](https://www.terraform.io/docs/configuration/expressions.html#for-expressions)
 
-[Flatten](https://www.terraform.io/docs/language/functions/flatten.html)
+[Flatten](https://www.terraform.io/docs/language/functions/flatten.html)    
+
+## v1.5
+
+[Variables](https://www.terraform.io/docs/language/values/variables.html)
