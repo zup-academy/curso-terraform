@@ -22,7 +22,6 @@ resource "docker_container" "docusaurus-zup" {
   # map
   ports {
     internal = 3000
-    external = 3000
   }
 }
 
