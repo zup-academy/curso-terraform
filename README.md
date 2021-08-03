@@ -34,3 +34,7 @@
 ## v1.5
 
 [Variables](https://www.terraform.io/docs/language/values/variables.html)
+
+## v1.6
+
+[Terraform structure](https://www.terraform.io/docs/language/modules/develop/structure.html)

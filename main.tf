@@ -12,23 +12,6 @@ provider "docker" {
 }
 
 
-variable "internal_port" {
-  type    = number
-  default = 3000
-
-}
-variable "external_port" {
-  type    = number
-  default = 3000
-
-}
-
-variable "container_count" {
-  type    = number
-  default = 1
-
-}
-
 resource "random_string" "random" {
   count   = var.container_count
   length  = 6
@@ -54,13 +37,5 @@ resource "docker_container" "docusaurus-zup" {
   }
 }
 
-output "container_name" {
-  value = docker_container.docusaurus-zup[*].name
 
-}
-
-output "ip_address" {
-  value = [for i in docker_container.docusaurus-zup[*] : join(":", [i.ip_address], i.ports[*]["external"])]
-
-}
 
