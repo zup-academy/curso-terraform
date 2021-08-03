@@ -1,6 +1,6 @@
 variable "internal_port" {
   type    = list(number)
-  default = ["3000","3001"]
+  default = ["3000"]
 
 }
 variable "external_port" {
