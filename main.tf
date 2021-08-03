@@ -20,7 +20,7 @@ resource "random_string" "random" {
 }
 
 resource "docker_image" "docusaurus-zup" {
-  name = "public.ecr.aws/zup-academy/docusaurus-zup:latest"
+  name = lookup(var.image, var.environment)
 }
 
 # Start a container
