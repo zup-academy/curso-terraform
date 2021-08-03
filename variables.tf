@@ -1,16 +1,14 @@
 variable "internal_port" {
-  type    = number
-  default = 3000
+  type    = list(number)
+  default = ["3000","3001"]
 
 }
 variable "external_port" {
-  type    = number
-  default = 3000
+  type    = list(number)
+  default = ["3000","3001"]
 
 }
 
-variable "container_count" {
-  type    = number
-  default = 1
-
+locals {
+    container_count = length(var.external_port)
 }

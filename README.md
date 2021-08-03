@@ -38,3 +38,7 @@
 ## v1.6
 
 [Terraform structure](https://www.terraform.io/docs/language/modules/develop/structure.html)
+
+## v1.7
+
+[Local Values](https://www.terraform.io/docs/language/values/locals.html)
