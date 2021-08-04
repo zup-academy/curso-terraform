@@ -11,7 +11,6 @@ terraform {
 provider "docker" {
 }
 
-
 resource "random_string" "random" {
   count   = local.container_count
   length  = 6
@@ -20,20 +19,20 @@ resource "random_string" "random" {
 }
 
 resource "docker_image" "docusaurus-zup" {
-  name = lookup(var.image, var.environment)
+  name = lookup(var.image, terraform.workspace)
 }
 
 # Start a container
 resource "docker_container" "docusaurus-zup" {
   count = local.container_count
-  name  = join("-", ["docusaurus-zup", random_string.random[count.index].result])
+  name  = join("-", ["docusaurus-zup", terraform.workspace, random_string.random[count.index].result])
 
   image = docker_image.docusaurus-zup.latest
 
   # map
   ports {
-    internal = var.internal_port[count.index]
-    external = var.external_port[count.index]
+    internal = var.internal_port
+    external = lookup(var.external_port, terraform.workspace)[count.index]
   }
 }
 

@@ -44,4 +44,7 @@
 [Local Values](https://www.terraform.io/docs/language/values/locals.html)
 
 ## v1.8
+
 [Lookup functions](https://www.terraform.io/docs/language/functions/lookup.html)
+
+[Workspaces](https://www.terraform.io/docs/language/state/workspaces.html)
