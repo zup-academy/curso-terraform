@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "2.14.0"
-    }
-  }
-}
-
-
-provider "docker" {
-}
-
 resource "random_string" "random" {
   count   = local.container_count
   length  = 6
@@ -18,8 +5,10 @@ resource "random_string" "random" {
   upper   = false
 }
 
-resource "docker_image" "docusaurus-zup" {
-  name = lookup(var.image, terraform.workspace)
+module "image" {
+  source       = "./image"
+  image_stored = var.image[terraform.workspace]
+
 }
 
 # Start a container
@@ -27,7 +16,7 @@ resource "docker_container" "docusaurus-zup" {
   count = local.container_count
   name  = join("-", ["docusaurus-zup", terraform.workspace, random_string.random[count.index].result])
 
-  image = docker_image.docusaurus-zup.latest
+  image = module.image.image_module
 
   # map
   ports {
