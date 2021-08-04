@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "2.14.0"
-    }
-  }
-}
-
-
-provider "docker" {
-}
-
 resource "random_string" "random" {
   count   = local.container_count
   length  = 6
