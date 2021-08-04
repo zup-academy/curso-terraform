@@ -1,9 +1,7 @@
 output "container_name" {
-  value = docker_container.docusaurus-zup[*].name
-
+  value = module.container[*].container_name
 }
 
 output "ip_address" {
-  value = [for i in docker_container.docusaurus-zup[*] : join(":", [i.ip_address], i.ports[*]["external"])]
-
+  value = flatten(module.container[*].ip_address)
 }
