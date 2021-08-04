@@ -1,24 +1,19 @@
-resource "random_string" "random" {
-  count   = local.container_count
-  length  = 6
-  special = false
-  upper   = false
-}
-
 module "image" {
   source       = "./image"
-  image_stored = var.image[terraform.workspace]
+  for_each     = local.image_type
+  image_stored = each.value.image
 
 }
 
 # Start a container
 module "container" {
   source          = "./container"
-  count           = local.container_count
-  name_stored     = join("-", ["docusaurus-zup", terraform.workspace, random_string.random[count.index].result])
-  image_stored    = module.image.image_module
-  internal_stored = var.internal_port
-  external_stored = lookup(var.external_port, terraform.workspace)[count.index]
+  count_stored    = each.value.container_count
+  for_each        = local.image_type
+  name_stored     = each.key
+  image_stored    = module.image[each.key].image_module
+  internal_stored = each.value.internal
+  external_stored = each.value.external
 }
 
 

@@ -56,3 +56,5 @@
 ## v1.10
 
 ## v1.11
+
+[For each](https://learn.hashicorp.com/tutorials/terraform/for-each)
