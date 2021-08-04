@@ -48,3 +48,7 @@
 [Lookup functions](https://www.terraform.io/docs/language/functions/lookup.html)
 
 [Workspaces](https://www.terraform.io/docs/language/state/workspaces.html)
+
+## v1.9
+
+[Modules](https://learn.hashicorp.com/tutorials/terraform/module)
